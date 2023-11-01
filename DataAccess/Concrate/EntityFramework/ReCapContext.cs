@@ -1,4 +1,5 @@
 ﻿using Core.Entities.Concrate;
+using Entities.Concrate;
 using Entities.Concrete;
 using Etities.Concrate;
 using Microsoft.EntityFrameworkCore;
@@ -12,6 +13,8 @@ public class ReCapContext : DbContext
     public DbSet<Brand> Brands { get; set; }
 
     public DbSet<Costomer> Costomers { get; set; }
+    
+    public DbSet<Motorcycleimg> Motorcycleimgs { get; set; }
 
     public DbSet<Motorcycle> Motorcycles { get; set; }
     public DbSet<Carimg> CarImages { get; set; }

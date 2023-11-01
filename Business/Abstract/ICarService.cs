@@ -6,7 +6,7 @@ namespace Business.Abstract;
 
 public interface ICarService
 {
-    IDataResult<List<CarDetailDto>> GetCarDetails();
+    IDataResult<List<CarDetailDto>> GetCarDetails();    
     IDataResult<List<Car>> GettAll();
     IDataResult<List<CarDetailDto>> GetByColorId(int colorId);
     IDataResult<List<Car>> GetByPrice(int min, int max);

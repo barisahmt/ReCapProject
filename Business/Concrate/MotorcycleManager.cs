@@ -1,6 +1,9 @@
 ﻿using Business.Abstract;
+using Business.Constants;
+using Core.Utilities.Results;
 using DataAccsess.Abstract;
 using Etities.Concrate;
+using Etities.Concrate.DTOs;
 
 namespace Business.Concrate;
 
@@ -36,6 +39,12 @@ public class MotorcycleManager : IMotorcycleService
     public List<Motorcycle> GetByPrice(int min, int max)
     {
         return _motorcycleDal.GetAll(p => p.DailyPrice >= min && p.DailyPrice <= max);
+    }
+    
+
+    public IDataResult<List<MotorcycleDetailDto>> GetMotorcycleDetails()
+    {
+        return new SuccessDataResult<List<MotorcycleDetailDto>>(_motorcycleDal.GetMotorcycleDetail(), Messages.Return);
     }
 
     public List<Motorcycle> GettAll()
